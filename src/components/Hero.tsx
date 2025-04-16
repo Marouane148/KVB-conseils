@@ -30,7 +30,7 @@ const Hero = () => {
               KVB Conseil
             </h1>
             <p className="text-xl md:text-3xl text-gray-100 leading-relaxed drop-shadow-lg font-medium">
-            Votre partenaire de confiance en toutes transparence,                                                Télécom, Informatiques, GED et affichage dynamique
+            Votre partenaire de confiance en toutes transparence
             </p>
           </div>
 
