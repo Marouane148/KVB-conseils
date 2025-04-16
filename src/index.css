@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  body {
+    @apply text-gray-900 antialiased;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-primary text-white px-6 py-3 rounded-full transition-all duration-300 hover:shadow-lg transform hover:-translate-y-0.5;
+  }
+
+  .btn-secondary {
+    @apply border-2 border-white text-white px-6 py-3 rounded-full transition-all duration-300 hover:bg-white hover:text-kvb-primary;
+  }
+
+  .card-hover-effect {
+    @apply transition-all duration-500 hover:-translate-y-1 hover:shadow-xl;
+  }
+
+  .icon-rotate-effect {
+    @apply transition-transform duration-300 group-hover:rotate-12;
+  }
+
+  .icon-container {
+    @apply relative w-16 h-16 mb-6;
+  }
+
+  .icon-background {
+    @apply absolute inset-0 rounded-xl;
+  }
+
+  .icon-wrapper {
+    @apply absolute inset-0 flex items-center justify-center text-white transform transition-all duration-300 group-hover:scale-110;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.bg-gradient-primary {
+  background-image: linear-gradient(to right, #8B5CF6, #7C3AED);
+}
+
+.hover\:bg-gradient-hover:hover {
+  background-image: linear-gradient(to right, #7C3AED, #6D28D9);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) scale(1.02);
+  }
+  50% {
+    transform: translateY(-20px) scale(1);
+  }
+  100% {
+    transform: translateY(0px) scale(1.02);
+  }
+}
+
+.animate-float {
+  animation: float 8s ease-in-out infinite;
+}
+
+@keyframes moveBackground {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 40px 40px;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(139, 92, 246, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(139, 92, 246, 0);
+  }
+}
+
+.animate-pulse-shadow {
+  animation: pulse 2s infinite;
+}
+
+/* Ajout d'effets de glassmorphisme */
+.glass-effect {
+  @apply backdrop-blur-md bg-white/80;
+}
+
+/* Effet de perspective au survol */
+.perspective-hover {
+  @apply transition-transform duration-300;
+  transform: perspective(1000px) rotateY(0deg);
+}
+
+.perspective-hover:hover {
+  transform: perspective(1000px) rotateY(12deg);
+}
+
+/* Animation de soulignement */
+.underline-animation {
+  @apply relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-kvb-primary after:transition-all after:duration-300 hover:after:w-full;
+}
